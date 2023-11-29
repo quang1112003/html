@@ -1,0 +1,78 @@
+/* p {
+    background: red 
+    url("https://cdn.sforum.vn/sforum/wp-content/uploads/2023/10/canh-dep-13.jpg") 
+    no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+} */
+*{
+    box-sizing: border-box; 
+    /*thuộc tính border-box để khai báo chính xác height và width.
+    width = width - padding left - padding right - border left - border right
+    height = height - padding top - padding bottom - border top - border bottom
+    */
+}
+html {
+    font-size: 62.5%; /*config font size cho thẻ html để rem ăn theo %. ban đầu 1 rem = 100 %= 16px --> 1 rem = 62.5% = 10px*/
+}
+/*mặc định 1rem=1em=16px*/
+.em {
+    width: 10em;
+    height: 10em;
+    background-color: red;
+    font-size: 32px;
+    /*em là đơn vị phụ thuộc vào thuộc tính font-size của chính nó hoặc phần tử chứa nó, trong trường hợp này font-size=32px nên 1em=32px*/
+}
+
+.rem {
+    width: 10rem;
+    height: 10rem;
+    background-color: orange;
+    font-size: 32px;
+    /*rem là đơn vị phụ thuộc vào thuộc tính font-size của thẻ html hay còn gọi là thẻ root, trong trường hợp này font-size=32px nên 1em=16px*/
+}
+
+.margin {
+    background-color: rebeccapurple;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    /*margin auto chỉ có tác dụng với thẻ block*/
+}
+.margin1 {
+    margin-top: 50px; /*xảy ra margin collapse, khi sử dụng đồng thời margin bottom ở class margin và margin top ở margin1, phần tử lớn hơn sẽ được lấy*/
+}
+a{
+    width: 10rem;
+    height: 10rem;
+    color: white;
+    background-color: red;
+    display: inline-block; /*vì thẻ inline không thể dùng width và height, cần khai báo display inline-block hoặc display block để chuyển thẻ inline thành block*/
+}
+/*margin có thể âm, padding thì không*/
+img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover; /*giống background cover nhưng dùng với hình ảnh*/
+    object-position: right; /*vị trí ảnh muốn thấy*/
+    margin: 0 auto;
+    display: block; /*ko dùng margin được với inline block, nếu dùng phải bao ảnh bên trong 1 wrapper và dùng text align center*/
+}
+.pseudo {
+    width: 10rem;
+    height: 10rem;
+    color: black;
+    font-size: 5rem;
+}
+.pseudo :hover {
+    color:red;
+}
+.pseudo:active {
+    color: green;
+}
+.pseudo:visited {
+    color: blue;
+}

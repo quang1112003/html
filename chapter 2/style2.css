@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box; 
+}
+html {
+    font-size: 62.5%; 
+}
+body {
+   font-family: 'Roboto', sans-serif;
+}
+.box {
+    width: 20rem;
+    height: 30rem;
+    background: #ffa400;
+    border: 1px yellow solid;
+    padding: 1rem;
+    margin: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.more {
+    max-width: 500px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    word-break: break-all;
+}
+.more2 {
+    margin-top: 2rem;
+    max-width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.img1 {
+    
+    width: 100vw;
+    height: 100vh;
+    background: red url("https://asia-1.console.stringee.com/upload/IMG_ZEHCMDQR7K7PLXSO.jpg") no-repeat center center/ cover ;
+}
+.img2{
+    display: inline;
+}
+.img2 img {
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    object-fit: cover; /*cho hình ko meos*/
+}
+
+.wrapper {
+    text-align: center;
+    width: 100%;
+    height: 40rem;
+    /* background-color: red; */
+}
+.title {
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 5rem;
+
+    
+}
+.button {
+    margin-top: 5rem;
+    display: inline-block;
+    width: 20rem;
+    height: 10rem;
+    margin-left: 10rem;
+}
+.btn {
+    padding: 1rem;
+    background-color: blueviolet;
+    color: white;
+    font-size: 4rem;
+    text-decoration: none;
+}
+.btn--rounded {
+    border-radius: 5px;
+}
+.btn--round {
+    border-radius: 5rem;
+}
+
+.btn:hover {
+    color: blue;
+    background-color: red;
+}
