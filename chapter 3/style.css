@@ -1,0 +1,97 @@
+:root {
+    --primary-color: green;
+    --secondary-color:red;
+} /*biến global*/
+*{
+    box-sizing: border-box;
+}
+html {
+    font-size: 1.6rem;
+    font-weight: normal;
+}
+.gradient {
+    height: 10rem;
+    width: 10rem;
+    background-image: linear-gradient(to right bottom, var(--primary-color), orange);
+    visibility: hidden; /*vẫn chiếm diện tích, có thể ấn vào được*/
+    opacity: 0; /*vẫn chiếm diện tích, không thể ấn vào được*/
+    display: none /*biến mất hoàn toàn*/;
+}
+.text-gradient {
+    font-size: 10rem;
+    display: inline-block;
+    color: black;
+}
+@supports (-webkit-background-clip: text){ /*nếu trình duyệt có hỗ trợ webkit background clip thì hiển thị đoạn dưới, còn ko thì mặc định chữ đen, dùng web caniuse để check*/
+    .text-gradient {
+        color: transparent;
+        background-image: linear-gradient(to right bottom, var(--primary-color), orange);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+.image-gradient {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 255, 0.413), rgba(255, 166, 0, 0.568)), url("https://plus.unsplash.com/premium_photo-1701187887029-907bed510db6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+.shadow {
+    /*giả sử muốn ghi đè màu, dùng biến local variable*/
+    --primary-color:purple;
+    width: 10rem;
+    height: 10rem;
+    /*x y scale blur color, có thể inspect tùy chỉnh box shadow*/
+    box-shadow: 5px 5px 10px 10px var(--primary-color);
+}
+
+/* độ quan trọng của selectors: tags < class < id < inline < !important, ưu tiên thứ tự từ dưới lên*/
+ul {
+    font-size: 4rem;   
+    font-weight: bold;
+}
+li:first-child {
+    color: green;
+}
+li:last-child {
+    color: rebeccapurple;
+}
+li:nth-child(2) {
+    color: orange;
+}
+li:nth-last-child(2) {
+    color: gold;
+}
+li:not(:nth-child(3)) { /*all except*/
+    color: blueviolet;
+}
+li:nth-child(odd) {
+    color: red;
+}
+li:nth-child(even) {
+    color: purple;
+}
+li:nth-child(2n+1) { /*công thức tương ứng với n chạy từ 0 --> n*/
+    color: grey;
+}
+li:first-of-type {
+    color: brown; /*phần tử đầu tiên của type li*/
+}
+
+li:nth-of-type(2) span {
+    color: blue; /*styling cho thẻ cấp dưới*/
+}
+.boxed2 {
+    height: 10rem;
+    width: 10rem;
+    background-color: red;
+    opacity: 0;
+    transition: all 2s linear;
+    /* transition: background-color 0.2s linear, color 0.2s linear; */
+    transition-delay: 0.5s;
+}
+.boxed2:hover {
+    opacity: 1;
+    background-color: green;
+    color: white;
+}
