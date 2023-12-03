@@ -95,3 +95,8 @@ li:nth-of-type(2) span {
     background-color: green;
     color: white;
 }
+.box2 {
+    width: 10rem;
+    height: 10rem;
+    background-image: radial-gradient(#e66465, #9198e5);    
+}

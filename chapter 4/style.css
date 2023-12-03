@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1.6rem;
+    font-weight: normal;
+}
+
+.transform {
+    background-color: red;
+    width: 10rem;
+    height: 5rem;
+    transform: translateX(30px); /*giống margin*/
+    transform: translateY(-50%); /*số đo lấy từ height*/
+    transform: rotateZ(60deg); /*xoay theo mặt phẳng, x theo ngang, y theo dọc*/
+    transform: skewX(30deg);
+}
+p {
+    color: white;
+}
+.wrap {
+    width: 100%;
+    height: 20rem;
+    background-color: black;
+    position: relative;
+}
+.box {
+    position: absolute; /*class cha phải có position relative để sử dụng absolute cho con*/
+    width: 5rem;
+    height: 2rem;
+    background-color: rebeccapurple;
+    /* transform: translateX(50%) translateY(50%); */
+    /*cách center theo chiều dọc, ngang dùng left, top và transform*/
+    /*dùng transform thay vì margin vì khi thay đổi width height, vị trí trung tâm sẽ thay đổi*/
+    left: 50%;
+    top: 50%;
+    /*kết hợp cả transform sẽ đưa về vị trí giữa trung tâm, thay vì ban đầu dùng left và top đưa vật thể nằm ở góc trái bên trên nếu chia màn hình làm 4 ô bằng nhau*/
+    transform: translate(-50%,-50%);
+}
