@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1.6rem;
+    font-weight: normal;
+}
+
+.list {
+    margin-top: 5px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+    /*nếu flex direction là column thì phải set height vì row với thẻ block mặc định là tràn 100% width, nên đã có sẵn width*/
+}
+
+.list__item {
+    width: 30%;
+    padding: 2rem;
+    background-color: orange;
+
+}
+
+.list__item:first-child {
+    font-size: 10rem;
+    align-self: flex-start;
+}
+.list__item:last-child {
+    align-self: baseline;
+}
+
+
