@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: "Poppins",sans-serif;
+}
+
+@mixin size ($width, $height:$width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flexbox ($direction, $align, $justify, $wrap) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    
+}
+input{
+    font-size: 1.6rem;
+    font-family: "Poppins",sans-serif;
+    font-weight: normal;
+    outline: none;
+}
+
+.custom {
+
+    font-family: "Poppins",sans-serif;
+    position: relative;
+    margin: 4rem;
+    &__input {
+        display: none;
+        &:checked + .custom__label:after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__label {
+        margin-left: 2rem;
+
+        &:before {
+            content: "";
+            @include size(2rem);
+            position: absolute;
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+            top: 50%;
+            left: 0%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+        }
+        &:after{
+            content: "";
+            @include size(0.8rem, 0.3rem);
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 4px;
+            left: -5px;
+            transform: rotate(-45deg);
+            border-bottom: 2px white solid;
+            border-left: 2px white solid;
+            transition: all 0.2s linear;
+        }
+    }
+    
+}

@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+input {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  outline: none;
+}
+
+.custom {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  margin: 4rem;
+}
+.custom__input {
+  display: none;
+}
+.custom__input:checked + .custom__label:after {
+  opacity: 1;
+  visibility: visible;
+}
+.custom__label {
+  margin-left: 2rem;
+}
+.custom__label:before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+.custom__label:after {
+  content: "";
+  width: 0.8rem;
+  height: 0.3rem;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 4px;
+  left: -5px;
+  transform: rotate(-45deg);
+  border-bottom: 2px white solid;
+  border-left: 2px white solid;
+  transition: all 0.2s linear;
+}
+
+/*# sourceMappingURL=style.css.map */

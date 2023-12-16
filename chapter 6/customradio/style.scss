@@ -1,0 +1,49 @@
+html {
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-family: "Poppins", sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+@mixin size ($width, $height:$width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flexbox ($direction: flex-start, $align: left, $justify: justify, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    flex-wrap: $wrap;
+    
+}
+.radio {
+    @include size(20rem);
+    margin: 3rem;
+    position: relative;
+    &__label {
+        &:before {
+            content: "";
+            @include size(1rem);
+            position: absolute;
+            top: 0;
+            left: -10%;
+            right: 0;
+            bottom: 0;
+            border-radius: 3rem;
+            background-color: #eee;
+            box-shadow: 0 0 0 4px #eee, 0 0 0 6px #c9c9c9 ;
+            transition: all 0.2s linear;
+        }
+    }
+    
+    &__input {
+        display: none;
+        &:checked + .radio__label:before {
+            background-color: red;
+            box-shadow: 0 0 0 4px white, 0 0 0 6px red;
+        } 
+    }
+}
